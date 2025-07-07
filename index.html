@@ -98,7 +98,42 @@
   text-align: center;
   color: #00bfff;
 }
-
+.timeline {
+  position: relative;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 2px solid #00bcd4;
+}
+.timeline-item {
+  margin-bottom: 30px;
+  position: relative;
+}
+.timeline-icon {
+  position: absolute;
+  left: -30px;
+  top: 0;
+  background-color: #00bcd4;
+  color: #fff;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 0 0 2px #121212;
+}
+.timeline-content h3 {
+  margin: 0 0 5px;
+  color: #03a9f4;
+}
+.timeline-content .date {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 8px;
+  display: block;
+}
   </style>
 </head>
 <body>
@@ -148,18 +183,32 @@
       </div>
     </div>
 
-    <div class="section">
+   <div class="section">
   <h2>💼 Experience</h2>
-
-  <p><strong>SAP Support Analyst – IT LINK COMPUTER LLC, Ajman</strong><br>
-  <em>Dec 2021 – May 2024</em><br>
-  Provided user support and resolved SAP system issues related to access and data integrity. Handled minor configuration, role assignments, and monitored system anomalies. Contributed to patch testing and documentation to support security compliance.</p>
-
-  <p><strong>Software Developer – Sigma Solutions, Ajman</strong><br>
-  <em>Jan 2020 – Nov 2021</em><br>
-  Developed scalable applications using Java, Python, and C++ following secure coding practices. Built responsive front-end interfaces using HTML, CSS, and JavaScript. Integrated SQL databases and conducted system testing and debugging.</p>
-
-  <p><strong>Computer Science Teacher – City Private School, Ajman</strong><br>
-  <em>Jun 2019 – Dec 2020</em><br>
-  Taught programming fundamentals, networking basics, and cybersecurity awareness. Mentored students in ethical coding practices and digital responsibility.</p>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-icon">🇦🇪</div>
+      <div class="timeline-content">
+        <h3>SAP Support Analyst – IT LINK COMPUTER LLC, Ajman</h3>
+        <span class="date">Dec 2021 – May 2024</span>
+        <p>Provided user support and resolved SAP system issues related to access and data integrity. Handled minor configuration, role assignments, and monitored system anomalies. Contributed to patch testing and documentation to support security compliance.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-icon">🇦🇪</div>
+      <div class="timeline-content">
+        <h3>Software Developer – Sigma Solutions, Ajman</h3>
+        <span class="date">Jan 2020 – Nov 2021</span>
+        <p>Developed scalable applications using Java, Python, and C++ following secure coding practices. Built responsive front-end interfaces using HTML, CSS, and JavaScript. Integrated SQL databases and conducted system testing and debugging.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-icon">🇦🇪</div>
+      <div class="timeline-content">
+        <h3>Computer Science Teacher – City Private School, Ajman</h3>
+        <span class="date">Jun 2019 – Dec 2020</span>
+        <p>Taught programming fundamentals, networking basics, and cybersecurity awareness. Mentored students in ethical coding practices and digital responsibility.</p>
+      </div>
+    </div>
+  </div>
 </div>
