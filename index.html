@@ -6,6 +6,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       padding: 0;
@@ -22,6 +25,10 @@
       text-align: center;
       border-right: 1px solid #333;
       margin-right: 30px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
     }
     .sidebar img {
       width: 150px;
@@ -137,55 +144,79 @@
       font-size: 0.95rem;
       color: #ddd;
     }
+    .nav-links {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .nav-links a {
+      color: #03a9f4;
+      text-decoration: none;
+      margin: 8px 0;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+    .nav-links a:hover {
+      color: #00bcd4;
+      padding-left: 5px;
+    }
   </style>
 </head>
 <body>
   <!-- Left Sidebar -->
- <div class="sidebar">
-  <img src="profilepic.JPG" alt="Profile Picture" class="profile-img">
-  <h2>Sreeja Ajith Kumar</h2>
-  <p>Aspiring Cybersecurity Analyst</p>
-  <p>SAP Analyst | Software Developer</p>
+  <div class="sidebar">
+    <img src="profilepic.JPG" alt="Profile Picture" class="profile-img">
+    <h2>Sreeja Ajith Kumar</h2>
+    <p>Aspiring Cybersecurity Analyst</p>
+    <p>SAP Analyst | Software Developer</p>
 
- <div class="contact-info">
-   <p><i class="fas fa-map-marker-alt"></i> Hamilton, New Zealand</p>
-  <p><i class="fas fa-envelope"></i> <a href="mailto:sreeja.ajithkumar92@gmail.com">sreeja.ajithkumar92@gmail.com</a></p>
-  <p><i class="fas fa-phone-alt"></i> <a href="tel:+642902301729">+64 2902301729</a></p>
-  <p><i class="fab fa-github"></i> <a href="https://github.com/Sreeja-A" target="_blank">GitHub</a></p>
-  <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sreeja-ajithkumar-6594161a3/">LinkedIn</a></p>
-</div>
-<div class="section">
-  <h2>📚 Publications</h2>
-  <p><strong>A Survey Paper on Clustering Data using Incremental Affinity Propagation</strong><br>
-  <em>Authors:</em> Sreeja AjithKumar, Praveen K Wilson<br>
-  <em>Journal:</em> IOSR Journal of Computer Engineering (IOSR-JCE)<br>
-  <em>e-ISSN:</em> 2278-0661 &nbsp;&nbsp; <em>p-ISSN:</em> 2278-8727<br>
-  <em>Pages:</em> 37–40<br>
-  <a href="https://www.iosrjournals.org" target="_blank">www.iosrjournals.org</a>
-  </p>
-</div>
-</div>
+    <div class="contact-info">
+      <p><i class="fas fa-map-marker-alt"></i> Hamilton, New Zealand</p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:sreeja.ajithkumar92@gmail.com">sreeja.ajithkumar92@gmail.com</a></p>
+      <p><i class="fas fa-phone-alt"></i> <a href="tel:+642902301729">+64 2902301729</a></p>
+      <p><i class="fab fa-github"></i> <a href="https://github.com/Sreeja-A" target="_blank">GitHub</a></p>
+      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sreeja-ajithkumar-6594161a3/">LinkedIn</a></p>
+    </div>
 
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#achievements">Achievements</a>
+    </nav>
+
+    <div class="section">
+      <h2>📚 Publications</h2>
+      <p><strong>A Survey Paper on Clustering Data using Incremental Affinity Propagation</strong><br>
+      <em>Authors:</em> Sreeja AjithKumar, Praveen K Wilson<br>
+      <em>Journal:</em> IOSR Journal of Computer Engineering (IOSR-JCE)<br>
+      <em>e-ISSN:</em> 2278-0661 &nbsp;&nbsp; <em>p-ISSN:</em> 2278-8727<br>
+      <em>Pages:</em> 37–40<br>
+      <a href="https://www.iosrjournals.org" target="_blank">www.iosrjournals.org</a>
+      </p>
+    </div>
+  </div>
 
   <!-- Main Content Area -->
   <div class="main">
-    <div class="section">
+    <section id="about" class="section">
       <h2>💼 Professional Overview</h2>
-      <p>I'm a cybersecurity post graduate with a strong foundation in secure software development, SAP systems, and enterprise IT support. Currently completing my postgraduation at the University of Waikato, I bring hands-on experience in SAP access control, secure coding, and web application development. My focus is on real-world threat mitigation, attacker behavior profiling, and building scalable, security-driven systems that align with organizational risk frameworks. I’m driven by curiosity, precision, and a commitment to proactive cyber defense in fast-evolving environments.
+      <p>I'm a cybersecurity post graduate with a strong foundation in secure software development, SAP systems, and enterprise IT support. Currently completing my postgraduation at the University of Waikato, I bring hands-on experience in SAP access control, secure coding, and web application development. My focus is on real-world threat mitigation, attacker behavior profiling, and building scalable, security-driven systems that align with organizational risk frameworks. I’m driven by curiosity, precision, and a commitment to proactive cyber defense in fast-evolving environments.</p>
+    </section>
 
-</p>
-    </div>
-
-    <div class="section">
-      <h2> 🚀 Featured Projects</h2>
+    <section id="projects" class="section">
+      <h2>🚀 Featured Projects</h2>
       <p><strong>Cyber Attacker Profiling (Capstone)</strong><br>Classification of attackers using honeypot data and threat models like MITRE ATT&CK & Diamond Model.</p>
       <p><strong>eHub – E-Commerce Web App</strong><br>Full-stack MERN application with secure login, product management, and admin features.</p>
       <p><strong>Multi-Exemplar Clustering for Feature Grouping</strong><br>Java + MySQL backend, clustering incremental data.</p>
       <p><strong>Sentiment Oriented Opinion Extraction</strong><br>ASP.NET system using optimized word alignment.</p>
       <p><strong>Big Data Friend Recommendation System</strong><br>ASP.NET ML-based friend suggestion from social data.</p>
-    </div>
+    </section>
 
-    <div class="section">
+    <section id="skills" class="section">
       <h2>🧰 Skills & Tools</h2>
       <div class="tools">
         <span>Wireshark</span> <span>Burp Suite</span> <span>Splunk</span>
@@ -194,72 +225,75 @@
         <span>MongoDB</span> <span>SQL</span> <span>Docker</span> <span>AWS</span>
         <span>SAP BW/BI</span> <span>Advanced Excel</span>
       </div>
-    </div>
+    </section>
 
-   <div class="section">
-  <h2>💼 Experience</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-icon">🇦🇪</div>
-      <div class="timeline-content">
-        <h3>SAP Support Analyst – IT LINK COMPUTER LLC, Ajman</h3>
-        <span class="date">Dec 2021 – May 2024</span>
-        <p>Provided user support and resolved SAP system issues related to access and data integrity. Handled minor configuration, role assignments, and monitored system anomalies. Contributed to patch testing and documentation to support security compliance.</p>
+    <section id="experience" class="section">
+      <h2>💼 Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon">🇦🇪</div>
+          <div class="timeline-content">
+            <h3>SAP Support Analyst – IT LINK COMPUTER LLC, Ajman</h3>
+            <span class="date">Dec 2021 – May 2024</span>
+            <p>Provided user support and resolved SAP system issues related to access and data integrity. Handled minor configuration, role assignments, and monitored system anomalies. Contributed to patch testing and documentation to support security compliance.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-icon">🇦🇪</div>
+          <div class="timeline-content">
+            <h3>Software Developer – Sigma Solutions, Ajman</h3>
+            <span class="date">Jan 2020 – Nov 2021</span>
+            <p>Developed scalable applications using Java, Python, and C++ following secure coding practices. Built responsive front-end interfaces using HTML, CSS, and JavaScript. Integrated SQL databases and conducted system testing and debugging.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-icon">🇦🇪</div>
+          <div class="timeline-content">
+            <h3>Computer Science Teacher – City Private School, Ajman</h3>
+            <span class="date">Jun 2019 – Dec 2020</span>
+            <p>Taught programming fundamentals, networking basics, and cybersecurity awareness. Mentored students in ethical coding practices and digital responsibility.</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-icon">🇦🇪</div>
-      <div class="timeline-content">
-        <h3>Software Developer – Sigma Solutions, Ajman</h3>
-        <span class="date">Jan 2020 – Nov 2021</span>
-        <p>Developed scalable applications using Java, Python, and C++ following secure coding practices. Built responsive front-end interfaces using HTML, CSS, and JavaScript. Integrated SQL databases and conducted system testing and debugging.</p>
+    </section>
+
+    <section id="education" class="section">
+      <h2>🎓 Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon">🇳🇿</div>
+          <div class="timeline-content">
+            <h3>Master's in Cyber Security</h3>
+            <span class="date">2024 (Expected)<br>University of Waikato, New Zealand</span>
+            <p>Coursework includes Network Security, Threat Modelling, Secure Coding, and Advanced Cybersecurity Research.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-icon">🇮🇳</div>
+          <div class="timeline-content">
+            <h3>Master's in Computer and Information Science</h3>
+            <span class="date">2017<br>APJ Abdul Kalam Technological University, India</span>
+            <p>Focus in Software Development, Programming Languages, Database Systems, and Project Management.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-icon">🇮🇳</div>
+          <div class="timeline-content">
+            <h3>Bachelor's in Computer Science & Engineering</h3>
+            <span class="date">2014<br>Kerala University, India</span>
+            <p>Studied fundamentals of computing, software engineering, and system analysis.</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-icon">🇦🇪</div>
-      <div class="timeline-content">
-        <h3>Computer Science Teacher – City Private School, Ajman</h3>
-        <span class="date">Jun 2019 – Dec 2020</span>
-        <p>Taught programming fundamentals, networking basics, and cybersecurity awareness. Mentored students in ethical coding practices and digital responsibility.</p>
-      </div>
-    </div>
+    </section>
+
+    <section id="achievements" class="section">
+      <h2>🏆 Achievements</h2>
+      <ul>
+        <li>Participation certificate – International Conference on Future Technology in Engineering (ICFTE 2016)</li>
+        <li>Certificate for paper presentation – National Symposium on Computational Intelligence (SCI'17)</li>
+      </ul>
+    </section>
   </div>
-</div>
-    <div class="section">
-  <h2>🎓 Education</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-icon">🇳🇿</div>
-      <div class="timeline-content">
-        <h3>Master's in Cyber Security</h3>
-        <span class="date">2024 (Expected)<br>University of Waikato, New Zealand</span>
-        <p>Coursework includes Network Security, Threat Modelling, Secure Coding, and Advanced Cybersecurity Research.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-icon">🇮🇳</div>
-      <div class="timeline-content">
-        <h3>Master's in Computer and Information Science</h3>
-        <span class="date">2017<br>APJ Abdul Kalam Technological University,India</span>
-        <p>Focus in Software Development, Programming Languages, Database Systems, and Project Management.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-icon">🇮🇳</div>
-      <div class="timeline-content">
-        <h3> Bachelor's in Computer Science & Engineering</h3>
-        <span class="date">2014<br>Kerala University, India</span>
-        <p>Studied fundamentals of computing, software engineering, and system analysis.</p>
-      </div>
-    </div>
-  </div>
-</div>
-    <div class="section">
-  <h2>🏆 Achievements</h2>
-  <ul>
-    <li>Participation certificate – International Conference on Future Technology in Engineering (ICFTE 2016)</li>
-    <li>Certificate for paper presentation – National Symposium on Computational Intelligence (SCI'17)</li>
-  </ul>
-</div>
-
-
+</body>
+</html>
