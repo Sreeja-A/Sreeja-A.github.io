@@ -5,102 +5,144 @@
   <title>Sreeja Ajith Kumar | Cybersecurity Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f4f4f4;
-      color: #333;
+      background-color: #121212;
+      color: #f5f5f5;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 40px;
     }
-    h1, h2 {
-      color: #2c3e50;
+
+    .container {
+      max-width: 960px;
+      margin: auto;
     }
-    a {
-      color: #0077cc;
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 3px solid #333;
+    }
+
+    .name-block h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .name-block p {
+      font-size: 1.1em;
+      color: #ccc;
+    }
+
+    h2 {
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+      color: #00bcd4;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .tools span, .links a {
+      display: inline-block;
+      background: #1e1e1e;
+      padding: 8px 12px;
+      margin: 6px 6px 0 0;
+      border-radius: 6px;
+      font-size: 0.9em;
+      color: #fff;
       text-decoration: none;
     }
+
+    .links a:hover {
+      background-color: #00bcd4;
+    }
+
+    a {
+      color: #03a9f4;
+      text-decoration: none;
+    }
+
     a:hover {
       text-decoration: underline;
     }
-    .section {
-      margin-bottom: 40px;
-    }
-    .tools {
-      background: #e0e0e0;
-      padding: 10px;
-      border-radius: 6px;
-      display: inline-block;
-      margin: 5px;
-    }
-    .profile-pic {
-      width: 180px;
-      border-radius: 50%;
-      border: 4px solid #ccc;
-      margin-bottom: 20px;
-    }
+
   </style>
 </head>
 <body>
+  <div class="container">
 
-  <!-- 👤 Profile Image -->
-  <img src="profile.JPG" alt="Sreeja Ajith Kumar" class="profile-pic">
-
-  <!-- 👩‍💻 Name & Title -->
-  <h1>Sreeja Ajith Kumar</h1>
-  <p>Cybersecurity Master's Student | Threat Intelligence Enthusiast | Secure Software Developer</p>
-
-  <!-- 📌 About -->
-  <div class="section">
-    <h2>👩‍💻 About Me</h2>
-    <p>
-      I'm currently pursuing my Master's in Cybersecurity at the University of Waikato, with a background in Computer Science and Information Systems.
-      I have experience in SAP support, secure software development, and full-stack web development.
-      My passion lies in attacker profiling, honeypot data analysis, and cyber threat intelligence frameworks like MITRE ATT&CK and the Diamond Model.
-    </p>
-  </div>
-
-  <!-- 🧠 Projects -->
-  <div class="section">
-    <h2>🧠 Featured Projects</h2>
-
-    <div>
-      <strong><a href="https://github.com/Sreeja-A/cyber-attacker-profiling" target="_blank">Cyber Attacker Profiling (Capstone)</a></strong>
-      <p>Analyzed honeypot logs and profiled attackers using MITRE ATT&CK and Diamond Model.</p>
+    <!-- Header Section -->
+    <div class="header">
+      <img src="profile.JPG" alt="Sreeja Ajith Kumar">
+      <div class="name-block">
+        <h1>Sreeja Ajith Kumar</h1>
+        <p>Cybersecurity Master's Student | Threat Intelligence Enthusiast | Secure Software Developer</p>
+      </div>
     </div>
 
-    <div>
-      <strong><a href="https://github.com/Sreeja-A/ehub" target="_blank">eHub – Full Stack E-commerce App</a></strong>
-      <p>Developed a secure MERN-stack e-commerce platform with user authentication and admin dashboard.</p>
+    <!-- About -->
+    <div class="section">
+      <h2>👩‍💻 About Me</h2>
+      <p>
+        I'm a Master’s student in Cybersecurity at the University of Waikato, with a background in Computer Science & Information Systems.
+        I’ve worked in SAP support, secure software development, and full-stack web applications. My key focus is attacker profiling, honeypot data analysis,
+        and cyber threat intelligence using MITRE ATT&CK and Diamond Model frameworks.
+      </p>
     </div>
-  </div>
 
-  <!-- 🧰 Tools -->
-  <div class="section">
-    <h2>🧰 Tools & Technologies</h2>
-    <span class="tools">Wireshark</span>
-    <span class="tools">Splunk</span>
-    <span class="tools">Metasploit</span>
-    <span class="tools">Burp Suite</span>
-    <span class="tools">Python</span>
-    <span class="tools">React</span>
-    <span class="tools">Node.js</span>
-    <span class="tools">MongoDB</span>
-    <span class="tools">Git</span>
-    <span class="tools">Docker</span>
-    <span class="tools">AWS</span>
-  </div>
+    <!-- Projects -->
+    <div class="section">
+      <h2>🧠 Featured Projects</h2>
+      <p><strong><a href="https://github.com/Sreeja-A/cyber-attacker-profiling" target="_blank">Cyber Attacker Profiling (Capstone)</a></strong><br>
+      Behavioral profiling of attackers using honeypot data, MITRE ATT&CK mapping, and Diamond Model analysis.</p>
 
-  <!-- 📄 Resume -->
-  <div class="section">
-    <h2>📄 Resume</h2>
-    <p><a href="resume.pdf" target="_blank">Download my Resume (PDF)</a></p>
-  </div>
+      <p><strong><a href="https://github.com/Sreeja-A/ehub" target="_blank">eHub – Full Stack E-commerce App</a></strong><br>
+      A secure MERN stack platform with user authentication, product management, and admin dashboard.</p>
+    </div>
 
-  <!-- 📬 Contact -->
-  <div class="section">
-    <h2>📬 Contact</h2>
-    <p>Email: <a href="mailto:sreeja.ajithkumar92@gmail.com">sreeja.ajithkumar92@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourlinkedin" target="_blank">linkedin.com/in/yourlinkedin</a></p>
-    <p>GitHub: <a href="https://github.com/Sreeja-A" target="_blank">github.com/Sreeja-A</a></p>
-  </div>
+    <!-- Tools & Tech -->
+    <div class="section">
+      <h2>🧰 Tools & Technologies</h2>
+      <div class="tools">
+        <span>Wireshark</span>
+        <span>Splunk</span>
+        <span>Metasploit</span>
+        <span>Burp Suite</span>
+        <span>Python</span>
+        <span>React</span>
+        <span>Node.js</span>
+        <span>MongoDB</span>
+        <span>Git</span>
+        <span>Docker</span>
+        <span>AWS</span>
+      </div>
+    </div>
 
+    <!-- Resume -->
+    <div class="section">
+      <h2>📄 Resume</h2>
+      <p><a href="resume.pdf" target="_blank">Download my Resume (PDF)</a></p>
+    </div>
+
+    <!-- Contact -->
+    <div class="section">
+      <h2>📬 Connect With Me</h2>
+      <div class="links">
+        <a href="mailto:sreeja.ajithkumar92@gmail.com">📧 Email</a>
+        <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank">🔗 LinkedIn</a>
+        <a href="https://github.com/Sreeja-A" target="_blank">💻 GitHub</a>
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
