@@ -161,18 +161,20 @@
       color: #00bcd4;
       padding-left: 5px;
     }
-   .sidebar {
-  width: 340px; /* slightly wider for clarity */
+ .sidebar {
+  width: 340px; /* Wider for better readability */
   background-color: #1e1e1e;
   padding: 40px 30px 30px 50px;
   text-align: center;
   border-right: 1px solid #333;
   margin-right: 30px;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow-y: hidden; /* ✅ This removes the scroll */
+
+  /* 🔥 Key Changes Below */
+  height: auto;            /* Auto height removes fixed viewport limitation */
+  position: relative;      /* Instead of sticky to avoid scroll constraints */
+  overflow: visible;       /* Ensures no scroll bar appears */
 }
+
 
 }
 .main {
