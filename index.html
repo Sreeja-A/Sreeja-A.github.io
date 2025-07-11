@@ -247,7 +247,20 @@
     background-color: #00bcd4;
     color: #000;
   }
-
+  .skill-card {
+    background: linear-gradient(135deg, #1e1e1e, #2e2e2e);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    margin-bottom: 20px;
+  }
+  .skill-card h4 {
+    margin-top: 0;
+    color: #00bcd4;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 
   </style>
 </head>
@@ -328,39 +341,45 @@ I bring hands-on experience in developing scalable, secure web applications and 
       <p><strong>Big Data Friend Recommendation System</strong><br>ASP.NET ML-based friend suggestion from social data.</p>
     </section>
 
-<!-- Skills & Tools Section - Improved Layout -->
+<!-- Skills & Tools Section - with Proficiency Bars and Cards -->
 <section id="skills" class="section">
   <h2 style="color: #e91e63; display: flex; align-items: center;">
     <i class="fas fa-toolbox" style="margin-right: 10px; color: #f06292;"></i>Skills & Tools
   </h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
-    <div>
-      <h4 style="color:#00bcd4;">🔐 Cybersecurity Tools</h4>
-      <div class="tools"><span>Wireshark</span> <span>Burp Suite</span> <span>Splunk</span> <span>Nmap</span></div>
-    </div>
-    <div>
-      <h4 style="color:#00bcd4;">💻 Programming Languages</h4>
-      <div class="tools"><span>Python</span> <span>Java</span> <span>C++</span> <span>JavaScript</span></div>
-    </div>
-    <div>
-      <h4 style="color:#00bcd4;">🌐 Web & App Development</h4>
-      <div class="tools"><span>HTML/CSS</span> <span>React</span> <span>Node.js</span></div>
-    </div>
-    <div>
-      <h4 style="color:#00bcd4;">🗃️ Databases</h4>
-      <div class="tools"><span>MongoDB</span> <span>SQL</span></div>
-    </div>
-    <div>
-      <h4 style="color:#00bcd4;">☁️ Platforms & DevOps</h4>
-      <div class="tools"><span>Docker</span> <span>AWS</span></div>
-    </div>
-    <div>
-      <h4 style="color:#00bcd4;">🏢 Enterprise Tools</h4>
-      <div class="tools"><span>SAP BW/BI</span> <span>Advanced Excel</span></div>
-    </div>
+  <div class="skill-card">
+    <h4><i class="fas fa-shield-alt"></i> Cybersecurity Tools</h4>
+    <div class="tools"><span>Wireshark</span> <span>Burp Suite</span> <span>Splunk</span> <span>Nmap</span></div>
+  </div>
+  <div class="skill-card">
+    <h4><i class="fas fa-code"></i> Programming Languages</h4>
+    <div class="tools"><span>Python</span> <span>Java</span> <span>C++</span> <span>JavaScript</span></div>
+  </div>
+  <div class="skill-card">
+    <h4><i class="fas fa-globe"></i> Web & App Development</h4>
+    <div class="tools"><span>HTML/CSS</span> <span>React</span> <span>Node.js</span></div>
+  </div>
+  <div class="skill-card">
+    <h4><i class="fas fa-database"></i> Databases</h4>
+    <div class="tools"><span>MongoDB</span> <span>SQL</span></div>
+  </div>
+  <div class="skill-card">
+    <h4><i class="fas fa-cloud"></i> Platforms & DevOps</h4>
+    <div class="tools"><span>Docker</span> <span>AWS</span></div>
+  </div>
+  <div class="skill-card">
+    <h4><i class="fas fa-building"></i> Enterprise Tools</h4>
+    <div class="tools"><span>SAP BW/BI</span> <span>Advanced Excel</span></div>
+  </div>
+  <div class="skill-card">
+    <h4><i class="fas fa-chart-line"></i> Proficiency Overview</h4>
+    <div style="margin: 15px 0;"><strong>Python</strong><div style="background: #333; border-radius: 6px; overflow: hidden; height: 10px;"><div style="width: 90%; background: #00bcd4; height: 100%;"></div></div></div>
+    <div style="margin: 15px 0;"><strong>Java</strong><div style="background: #333; border-radius: 6px; overflow: hidden; height: 10px;"><div style="width: 80%; background: #00bcd4; height: 100%;"></div></div></div>
+    <div style="margin: 15px 0;"><strong>JavaScript</strong><div style="background: #333; border-radius: 6px; overflow: hidden; height: 10px;"><div style="width: 70%; background: #00bcd4; height: 100%;"></div></div></div>
+    <div style="margin: 15px 0;"><strong>React</strong><div style="background: #333; border-radius: 6px; overflow: hidden; height: 10px;"><div style="width: 65%; background: #00bcd4; height: 100%;"></div></div></div>
+    <div style="margin: 15px 0;"><strong>SQL</strong><div style="background: #333; border-radius: 6px; overflow: hidden; height: 10px;"><div style="width: 75%; background: #00bcd4; height: 100%;"></div></div></div>
+    <div style="margin: 15px 0;"><strong>Docker</strong><div style="background: #333; border-radius: 6px; overflow: hidden; height: 10px;"><div style="width: 60%; background: #00bcd4; height: 100%;"></div></div></div>
   </div>
 </section>
-
 
 
     <section id="experience" class="section">
