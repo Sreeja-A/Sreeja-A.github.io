@@ -8,64 +8,63 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-  <nav>
-    <div class="logo">Sreeja</div>
-    <ul class="nav-links">
-      <li><a href="index.html" class="nav-links-a active">Home</a></li>
-      <li><a href="about.html" class="nav-links-a">About</a></li>
-      <li><a href="skills.html" class="nav-links-a">Skills</a></li>
-      <li><a href="projects.html" class="nav-links-a">Projects</a></li>
-      <li><a href="contact.html" class="nav-links-a">Contact</a></li>
-    </ul>
-  </nav>
 
-  <header class="hero-section">
-    <div class="hero-text">
-      <h1>Hi,</h1>
-      <h2>I'm <span class="highlight">Sreeja</span></h2>
-      <h3>React.js Developer</h3>
-      <a href="contact.html" class="btn">Contact</a>
-      <div class="social-icons">
-        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://behance.net" target="_blank"><i class="fab fa-behance"></i></a>
+  <!-- Galaxy Background Layer -->
+  <div id="particles-js"></div>
+
+  <!-- Main Content Wrapper -->
+  <div class="main-content">
+    <nav>
+      <div class="logo">Sreeja</div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-links-a active">Home</a></li>
+        <li><a href="about.html" class="nav-links-a">About</a></li>
+        <li><a href="skills.html" class="nav-links-a">Skills</a></li>
+        <li><a href="projects.html" class="nav-links-a">Projects</a></li>
+        <li><a href="contact.html" class="nav-links-a">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="hero-section">
+      <div class="hero-text">
+        <h1>Hi,</h1>
+        <h2>I'm <span class="highlight">Sreeja</span></h2>
+        <h3>React.js Developer</h3>
+        <a href="contact.html" class="btn">Contact</a>
+        <div class="social-icons">
+          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://behance.net" target="_blank"><i class="fab fa-behance"></i></a>
+        </div>
       </div>
-    </div>
-    <div class="hero-img">
-      <img src="profilepic.JPG" alt="Sreeja Profile">
-    </div>
-  </header>
+      <div class="hero-img">
+        <img src="profilepic.JPG" alt="Sreeja Profile">
+      </div>
+    </header>
+  </div>
+
+  <!-- Particle Script -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script>
-  particlesJS("particles-js", {
-    "particles": {
-      "number": {
-        "value": 100
-      },
-      "size": {
-        "value": 2
-      },
-      "color": {
-        "value": "#ffffff"
-      },
-      "line_linked": {
-        "enable": true,
-        "color": "#ffffff"
-      },
-      "move": {
-        "speed": 1
-      }
-    },
-    "interactivity": {
-      "events": {
-        "onhover": {
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 100 },
+        "size": { "value": 2 },
+        "color": { "value": "#ffffff" },
+        "line_linked": {
           "enable": true,
-          "mode": "repulse"
+          "color": "#ffffff"
+        },
+        "move": { "speed": 1 }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" }
         }
       }
-    }
-  });
-</script>
+    });
+  </script>
 
 </body>
 </html>
+
