@@ -166,11 +166,10 @@ footer i:hover {
   z-index: -1;
   top: 0;
   left: 0;
-  background: #0d0d0d; /* Fallback dark background */
+  background: #0d0d0d;
 }
 
 .main-content {
   position: relative;
   z-index: 1;
 }
-
