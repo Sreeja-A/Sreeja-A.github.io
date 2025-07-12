@@ -42,6 +42,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 100px 40px;
+    gap: 30px;
 }
 
 .hero-text {
