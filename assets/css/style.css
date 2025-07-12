@@ -134,4 +134,9 @@ footer i:hover {
   .hero-img img {
     width: 250px;
   }
+  .logo img {
+  height: 40px;
+  vertical-align: middle;
+}
+
 }
