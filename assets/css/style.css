@@ -84,10 +84,11 @@ footer i {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 100px 60px;
-  gap: 60px;
+  padding: 100px 30px; /* ⬅ reduced horizontal padding */
+  gap: 30px; /* ⬅ reduced gap between text and image */
   flex-wrap: wrap;
 }
+
 
 .hero-text {
   flex: 1;
