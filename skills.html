@@ -4,13 +4,107 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Skills</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: black;
+      color: white;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #111;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar img.logo {
+      height: 40px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar li a:hover,
+    .navbar li a.active {
+      color: #00aaff;
+      border-bottom: 2px solid #00aaff;
+    }
+
+    /* Skills Section */
+    .skills-section {
+      padding: 70px 30px;
+      text-align: center;
+    }
+
+    .skills-section h1 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #00aaff;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .skill-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 15px;
+      transition: transform 0.3s;
+      box-shadow: 0 0 10px rgba(0, 170, 255, 0.2);
+    }
+
+    .skill-card:hover {
+      transform: scale(1.05);
+    }
+
+    .skill-card img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .skill-card p {
+      margin-top: 10px;
+      font-weight: bold;
+      color: white;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Background animation -->
+  <!-- Animated background canvas -->
   <canvas id="bgCanvas"></canvas>
 
   <!-- Navbar -->
@@ -40,6 +134,63 @@
       <div class="skill-card"><img src="images/sql.png" alt="SQL"><p>SQL</p></div>
     </div>
   </section>
+
+  <!-- Background animation JS -->
+  <script>
+    const canvas = document.getElementById('bgCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height, particles;
+
+    function initCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+
+      particles = Array.from({ length: 80 }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5),
+        vy: (Math.random() - 0.5)
+      }));
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+
+      for (let p of particles) {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+        ctx.fillStyle = 'white';
+        ctx.fill();
+      }
+
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 100) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', initCanvas);
+    initCanvas();
+    draw();
+  </script>
 
 </body>
 </html>
