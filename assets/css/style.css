@@ -219,3 +219,106 @@ footer i:hover {
   margin-bottom: 20px;
 }
 
+/* Background */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  background-color: black;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* Canvas animation */
+#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar .logo {
+  height: 40px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.navbar li a i {
+  margin-right: 6px;
+}
+
+.navbar li a.active,
+.navbar li a:hover {
+  color: #00aaff;
+  border-bottom: 2px solid #00aaff;
+}
+
+/* Skills */
+.skills-section {
+  padding: 80px 30px;
+  text-align: center;
+}
+
+.skills-section h1 {
+  color: #00aaff;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.2);
+}
+
+.skill-card:hover {
+  transform: scale(1.1);
+}
+
+.skill-card img {
+  width: 60px;
+  height: 60px;
+}
+
+.skill-card p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: white;
+}
