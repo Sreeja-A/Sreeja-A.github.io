@@ -1,143 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: white;
-            background: #000;
-            overflow-x: hidden;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.9);
-            border-bottom: 1px solid #222;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        .navbar a:hover {
-            color: #1e90ff;
-        }
-
-        .skills-section {
-            padding: 60px 20px;
-            text-align: center;
-            background-image: url('images/background.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-        }
-
-        .skills-section h1 {
-            font-size: 2.5em;
-            color: #1e90ff;
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .skill-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 15px;
-            width: 120px;
-            text-align: center;
-            transition: transform 0.3s ease, background 0.3s;
-        }
-
-        .skill-box:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .skill-box i, .skill-box img {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        .skill-box img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .skill-name {
-            font-size: 1em;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo"><a href="index.html"> <img src="images/logo.png" alt="Logo" height="30"> </a></div>
-        <div>
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
-            <a href="about.html"><i class="fas fa-user"></i> About</a>
-            <a href="skills.html"><i class="fas fa-code"></i> Skills</a>
-            <a href="projects.html"><i class="fas fa-diagram-project"></i> Projects</a>
-            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
-            <a href="achievements.html"><i class="fas fa-trophy"></i> Achievements</a>
-        </div>
-    </div>
 
-    <section class="skills-section">
-        <h1>My Skills</h1>
-        <div class="skills-container">
-            <div class="skill-box">
-                <img src="images/html.png" alt="HTML">
-                <div class="skill-name">HTML</div>
-            </div>
-            <div class="skill-box">
-                <img src="images/css.png" alt="CSS">
-                <div class="skill-name">CSS</div>
-            </div>
-            <div class="skill-box">
-                <img src="images/javascript.png" alt="JavaScript">
-                <div class="skill-name">JavaScript</div>
-            </div>
-            <div class="skill-box">
-                <img src="images/python.png" alt="Python">
-                <div class="skill-name">Python</div>
-            </div>
-            <div class="skill-box">
-                <img src="images/sql.png" alt="SQL">
-                <div class="skill-name">SQL</div>
-            </div>
-            <div class="skill-box">
-                <img src="images/github.png" alt="GitHub">
-                <div class="skill-name">GitHub</div>
-            </div>
-            <div class="skill-box">
-                <img src="images/network.png" alt="Networking">
-                <div class="skill-name">Networking</div>
-            </div>
-            <div class="skill-box">
-                <img src="images/linux.png" alt="Linux">
-                <div class="skill-name">Linux</div>
-            </div>
-        </div>
-    </section>
+  <!-- Animated Background -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <img src="images/logo.png" alt="Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fa fa-user"></i> About</a></li>
+        <li><a href="skills.html" class="active"><i class="fa fa-code"></i> Skills</a></li>
+        <li><a href="projects.html"><i class="fa fa-project-diagram"></i> Projects</a></li>
+        <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
+        <li><a href="achievements.html"><i class="fa fa-trophy"></i> Achievements</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Skills Section -->
+  <section class="skills-section">
+    <h1>My Skills</h1>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <img src="images/html.png" alt="HTML" />
+        <p>HTML</p>
+      </div>
+      <div class="skill-card">
+        <img src="images/css.png" alt="CSS" />
+        <p>CSS</p>
+      </div>
+      <div class="skill-card">
+        <img src="images/javascript.png" alt="JavaScript" />
+        <p>JavaScript</p>
+      </div>
+      <div class="skill-card">
+        <img src="images/python.png" alt="Python" />
+        <p>Python</p>
+      </div>
+      <div class="skill-card">
+        <img src="images/react.png" alt="React" />
+        <p>React</p>
+      </div>
+      <div class="skill-card">
+        <img src="images/sql.png" alt="SQL" />
+        <p>SQL</p>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
