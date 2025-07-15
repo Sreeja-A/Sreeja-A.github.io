@@ -5,25 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | Sreeja Ajithkumar</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #121212;
-      color: #fff;
+      color: #ffffff;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #1a1a1a;
+      background-color: #000;
       padding: 15px 30px;
       position: fixed;
-      width: 100%;
       top: 0;
-      z-index: 2;
+      width: 100%;
+      z-index: 1000;
     }
 
     .logo img {
@@ -36,81 +37,99 @@
       gap: 20px;
     }
 
-    .nav-links li a {
+    .nav-links a {
       text-decoration: none;
-      color: white;
+      color: #fff;
       font-weight: bold;
-      position: relative;
+      font-size: 15px;
     }
 
-    .nav-links li a.active::after {
+    .nav-links a.active::after {
       content: '';
       display: block;
       width: 100%;
       height: 2px;
       background-color: #007bff;
       position: absolute;
-      bottom: -5px;
+      bottom: -4px;
       left: 0;
     }
 
+    /* Contact Section */
     .contact-section {
-      max-width: 800px;
-      margin: 120px auto 50px;
-      padding: 40px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 120px;
+    }
+
+    .contact-card {
       text-align: center;
+      background-color: #1f1f1f;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 123, 255, 0.2);
+      max-width: 600px;
+      width: 90%;
     }
 
-    .contact-section h1 {
+    .contact-card h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
       color: #007bff;
-      font-size: 36px;
-      margin-bottom: 10px;
     }
 
-    .contact-section p {
-      font-size: 18px;
+    .contact-card p {
+      font-size: 1rem;
+      margin: 10px 0;
       color: #ccc;
-      margin: 8px 0;
     }
 
-    .contact-section a {
+    .contact-card i {
+      color: #007bff;
+      margin-right: 8px;
+    }
+
+    .contact-card a {
       color: #ccc;
       text-decoration: none;
     }
 
-    .contact-section a:hover {
+    .contact-card a:hover {
       color: #007bff;
     }
 
     .social-icons {
-      margin-top: 25px;
+      margin-top: 20px;
     }
 
     .social-icons a {
-      font-size: 26px;
-      margin: 0 12px;
-      color: white;
-      transition: color 0.3s ease;
+      color: #ccc;
+      font-size: 24px;
+      margin: 0 10px;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
 
     .social-icons a:hover {
       color: #007bff;
+      transform: scale(1.2);
     }
 
     @media (max-width: 600px) {
-      .contact-section h1 {
-        font-size: 28px;
-      }
-      .social-icons a {
-        margin: 0 8px;
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
       }
     }
   </style>
 </head>
 <body>
+
+  <!-- Navigation -->
   <nav>
     <div class="logo">
-      <img src="assets/logo.png" alt="Logo" />
+      <img src="assets/logo.png" alt="Logo">
     </div>
     <ul class="nav-links">
       <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
@@ -122,16 +141,12 @@
     </ul>
   </nav>
 
-  <!-- ✨ Stylish Contact Card -->
-  <section class="contact-container">
+  <!-- Contact Content -->
+  <section class="contact-section">
     <div class="contact-card">
       <h1>Get in Touch</h1>
-      <p class="subheading">I'd love to connect with you!</p>
-
-      <div class="info-block">
-        <p><i class="fas fa-envelope"></i> <a href="mailto:sreeja.ajithkumar92@gmail.com">sreeja.ajithkumar92@gmail.com</a></p>
-        <p><i class="fas fa-phone-alt"></i> <a href="tel:+642902301729">+64 290 230 1729</a></p>
-      </div>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:sreeja.ajithkumar92@gmail.com">sreeja.ajithkumar92@gmail.com</a></p>
+      <p><i class="fas fa-phone-alt"></i> <a href="tel:+642902301729">+64 290 230 1729</a></p>
 
       <div class="social-icons">
         <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -142,6 +157,6 @@
       </div>
     </div>
   </section>
-</body>
 
+</body>
 </html>
