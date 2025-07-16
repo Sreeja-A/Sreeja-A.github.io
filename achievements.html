@@ -6,12 +6,22 @@
   <title>Achievements - Sreeja Ajithkumar</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #fff;
-      background: url('backgrounds/particles.gif') no-repeat center center fixed;
-      background-size: cover;
+    }
+
+    #particles-js {
+      background: #000;
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
 
     nav {
@@ -81,6 +91,8 @@
 </head>
 <body>
 
+  <div id="particles-js"></div>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -122,5 +134,39 @@
     </div>
   </div>
 
+  <!-- Particle JS script -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS('particles-js',
+    {
+      "particles": {
+        "number": { "value": 80 },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 2 },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "push" }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+
 </body>
 </html>
+
