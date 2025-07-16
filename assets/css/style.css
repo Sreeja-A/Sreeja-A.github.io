@@ -345,3 +345,87 @@ body, html {
   .btn.cv-btn:hover {
     background-color: #218838;
   }
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 50px 50px;
+  height: 100vh;
+  position: relative;
+}
+
+.hero-text h1, .hero-text h2, .hero-text h3 {
+  margin: 0;
+}
+
+.hero-text h2 {
+  font-size: 2.8rem;
+  margin-top: 10px;
+}
+
+.hero-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.value-line {
+  font-style: italic;
+  font-size: 1rem;
+  margin: 10px 0 20px;
+  color: #ccc;
+}
+
+.button-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 22px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.btn.cv-btn {
+  background-color: #28a745;
+}
+
+.btn.cv-btn:hover {
+  background-color: #1e7e34;
+}
+
+.hero-img img {
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #000;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.hero-img img:hover {
+  box-shadow: 0 0 20px 5px #007bff;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin-right: 15px;
+  color: #fff;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
