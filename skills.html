@@ -3,219 +3,183 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skills - Sreeja</title>
+  <title>My Skills</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    body, html {
+    body {
       margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: black;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #000;
       color: white;
-      height: 100%;
       overflow-x: hidden;
     }
 
-    canvas {
+    /* Particle background container */
+    #particles-js {
       position: fixed;
-      top: 0;
-      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: -1;
     }
 
     header {
-      background-color: #111;
-      padding: 15px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.8);
     }
 
-    header .logo {
+    header img {
       height: 40px;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li a {
-      color: white;
+    nav a {
+      margin-left: 20px;
       text-decoration: none;
+      color: white;
       font-weight: bold;
+      transition: color 0.3s;
     }
 
-    nav ul li a:hover,
-    nav ul li a.active {
+    nav a:hover, nav a.active {
       color: #00aaff;
-      border-bottom: 2px solid #00aaff;
     }
 
     h1 {
       text-align: center;
-      margin-top: 80px;
+      margin-top: 20px;
       color: #00aaff;
-      font-size: 36px;
     }
 
-    .skills-section {
-      max-width: 1000px;
-      margin: 40px auto;
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .skill-card {
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid #00aaff;
+      border-radius: 15px;
       padding: 20px;
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0, 170, 255, 0.2);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .skills-section h2 {
-      color: #00aaff;
-      border-bottom: 2px solid #00aaff;
-      padding-bottom: 5px;
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #00aaff;
     }
 
-    .skills-list {
-      margin-bottom: 20px;
-    }
-
-    .skills-list strong {
+    .skill-card i {
+      font-size: 40px;
+      margin-bottom: 10px;
       color: #00aaff;
     }
 
     .languages {
-      display: flex;
-      gap: 15px;
-      margin-top: 10px;
+      text-align: center;
+      margin: 30px 0;
     }
 
     .languages span {
+      display: inline-block;
       background-color: #00aaff;
-      color: white;
-      padding: 8px 14px;
+      color: #fff;
+      padding: 8px 15px;
+      margin: 5px;
       border-radius: 20px;
       font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <canvas id="bgCanvas"></canvas>
+
+  <div id="particles-js"></div>
 
   <header>
-    <img src="images/logo.png" alt="Logo" class="logo">
+    <img src="images/your-logo.png" alt="Logo" />
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="skills.html" class="active">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="achievements.html">Achievements</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html" class="active">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="achievements.html">Achievements</a>
     </nav>
   </header>
 
   <h1>My Skills</h1>
-  <div class="skills-section">
-    <div class="skills-list">
-      <h2>Cybersecurity & Networking</h2>
-      <p>Threat Analysis, Vulnerability Assessment, Network Security, Secure Programming, Digital Forensics, Incident Response, Risk Management</p>
+
+  <div class="skills-container">
+    <div class="skill-card">
+      <i class="fas fa-shield-alt"></i>
+      <h3>Cybersecurity & Networking</h3>
+      <p>Threat Analysis, Network Security, Digital Forensics, Risk Management</p>
     </div>
 
-    <div class="skills-list">
-      <h2>Tools & Platforms</h2>
-      <p>Wireshark, Burp Suite, Splunk, Metasploit, Nmap, SAP BW/BI, HANA, Advanced Excel</p>
+    <div class="skill-card">
+      <i class="fas fa-tools"></i>
+      <h3>Tools & Platforms</h3>
+      <p>Wireshark, Burp Suite, Splunk, Metasploit, Nmap, SAP BW/BI, HANA</p>
     </div>
 
-    <div class="skills-list">
-      <h2>Programming</h2>
+    <div class="skill-card">
+      <i class="fas fa-code"></i>
+      <h3>Programming</h3>
       <p>Python, Java, C++, HTML, CSS, JavaScript</p>
     </div>
 
-    <div class="skills-list">
-      <h2>Cloud & DevOps</h2>
+    <div class="skill-card">
+      <i class="fas fa-cloud"></i>
+      <h3>Cloud & DevOps</h3>
       <p>AWS (basic), Git, Docker</p>
     </div>
 
-    <div class="skills-list">
-      <h2>Testing & Debugging</h2>
-      <p>Unit Testing, Secure Code Review, Automation Testing</p>
+    <div class="skill-card">
+      <i class="fas fa-bug"></i>
+      <h3>Testing & Debugging</h3>
+      <p>Secure Code Review, Unit Testing, Automation</p>
     </div>
 
-    <div class="skills-list">
-      <h2>Databases</h2>
+    <div class="skill-card">
+      <i class="fas fa-database"></i>
+      <h3>Databases</h3>
       <p>SQL, MySQL, Database Design</p>
-    </div>
-
-    <div class="skills-list">
-      <h2>Languages</h2>
-      <div class="languages">
-        <span>English</span>
-        <span>Hindi</span>
-        <span>Malayalam</span>
-        <span>Tamil</span>
-      </div>
     </div>
   </div>
 
+  <div class="languages">
+    <h3 style="color: #00aaff;">Languages</h3>
+    <span>English</span>
+    <span>Hindi</span>
+    <span>Malayalam</span>
+    <span>Tamil</span>
+  </div>
+
+  <!-- Include particles.js directly -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
-    const canvas = document.getElementById('bgCanvas');
-    const ctx = canvas.getContext('2d');
-    let width, height, particles;
-
-    function initCanvas() {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-
-      particles = Array.from({ length: 80 }, () => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5),
-        vy: (Math.random() - 0.5)
-      }));
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, width, height);
-
-      for (let p of particles) {
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if (p.x < 0 || p.x > width) p.vx *= -1;
-        if (p.y < 0 || p.y > height) p.vy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = 'white';
-        ctx.fill();
-      }
-
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 100) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = 'rgba(255,255,255,0.1)';
-            ctx.stroke();
-          }
-        }
-      }
-
-      requestAnimationFrame(draw);
-    }
-
-    window.addEventListener('resize', initCanvas);
-    initCanvas();
-    draw();
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60 },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 2 }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": { "onhover": { "enable": true, "mode": "repulse" } }
+      },
+      "retina_detect": true
+    });
   </script>
 
 </body>
