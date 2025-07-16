@@ -1,31 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Projects | Sreeja</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    canvas#background {
+      position: fixed;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #111;
+      padding: 10px 30px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #00bfff;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 100px auto 50px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0, 191, 255, 0.4);
+    }
+
+    .container h1 {
+      text-align: center;
+      color: #00bfff;
+      margin-bottom: 30px;
+    }
+
+    .project {
+      margin-bottom: 30px;
+    }
+
+    .project h3 {
+      color: #00bfff;
+      margin-bottom: 5px;
+    }
+
+    .project p {
+      line-height: 1.5;
+    }
+
+    .project small {
+      color: #ccc;
+    }
+
+  </style>
 </head>
 <body>
-  <nav>
-    <div class="logo">Sreeja</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a class="active" href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <canvas id="background"></canvas>
 
-  <section class="content">
-    <h1>Projects</h1>
-    <ul>
-      <li><strong>AI-Based Cow Health Monitor:</strong> Using IoT and ML for dairy farming automation.</li>
-      <li><strong>Bandook RAT Detection:</strong> Threat modeling and behavioral profiling using MITRE ATT&CK.</li>
-      <li><strong>Portfolio Website:</strong> Built with HTML, CSS, GitHub Pages, and JS animations.</li>
-    </ul>
-  </section>
+  <div class="navbar">
+    <div><img src="images/logo.png" alt="Logo" width="40" /></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="achievements.html">Achievements</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>My Projects</h1>
+
+    <div class="project">
+      <h3>Profiling Cyber Attackers Through Attack Tactics</h3>
+      <p>Classifies and analyzes cyber attackers using behavioral profiling and MITRE ATT&CK to support proactive threat mitigation.</p>
+      <small>06/2025 – present</small>
+    </div>
+
+    <div class="project">
+      <h3>eHub – E-Commerce Web Application</h3>
+      <p>Developed an e-commerce platform using React.js, Node.js, and MongoDB with features like authentication, cart management, and secure checkout.</p>
+      <small>07/2024 – 11/2024</small>
+    </div>
+
+    <div class="project">
+      <h3>AI-Based Cow Health Monitor</h3>
+      <p>Utilized IoT and Machine Learning to monitor dairy cows’ health and productivity in real-time.</p>
+    </div>
+
+    <div class="project">
+      <h3>Bandook RAT Detection</h3>
+      <p>Threat modeling using MITRE ATT&CK to detect Bandook Remote Access Trojan activities and profiling attacker behavior.</p>
+    </div>
+
+    <div class="project">
+      <h3>Portfolio Website</h3>
+      <p>Responsive portfolio built using HTML, CSS, GitHub Pages, and JavaScript animations.</p>
+    </div>
+
+    <div class="project">
+      <h3>Multi-Exemplar Clustering for Feature Grouping</h3>
+      <p>Implemented a Java application backed by MySQL for feature grouping in incremental datasets using clustering techniques.</p>
+    </div>
+
+    <div class="project">
+      <h3>Sentiment Oriented Opinion Extraction</h3>
+      <p>Built with ASP.NET, this project uses optimized word alignment to extract sentiment-driven insights from text.</p>
+    </div>
+
+    <div class="project">
+      <h3>Big Data Mining for Friend Recommendation</h3>
+      <p>Used machine learning on big data to build a friend recommendation system in ASP.NET.</p>
+    </div>
+  </div>
+
+  <script>
+    // Simple particle background using canvas (can be replaced with tsParticles if needed)
+    const canvas = document.getElementById("background");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particlesArray = [];
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = Math.random() * 1 - 0.5;
+        this.speedY = Math.random() * 1 - 0.5;
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+      }
+
+      draw() {
+        ctx.fillStyle = "#fff";
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function init() {
+      particlesArray = [];
+      for (let i = 0; i < 100; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particlesArray.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      init();
+    });
+
+    init();
+    animate();
+  </script>
 </body>
 </html>
-
-
