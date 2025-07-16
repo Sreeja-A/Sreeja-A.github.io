@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Skills - Sreeja</title>
   <style>
     body, html {
@@ -64,145 +64,159 @@
       font-size: 36px;
     }
 
-    .skills-grid {
+    .skills-section {
       max-width: 1000px;
-      margin: 50px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 30px;
-      padding: 0 20px;
-    }
-
-    .skill-card {
-      background-color: rgba(255, 255, 255, 0.06);
+      margin: 40px auto;
       padding: 20px;
-      border-radius: 15px;
-      text-align: center;
-      transition: transform 0.3s;
-      box-shadow: 0 0 10px rgba(0, 170, 255, 0.2);
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 170, 255, 0.2);
     }
 
-    .skill-card:hover {
-      transform: scale(1.05);
+    .skills-section h2 {
+      color: #00aaff;
+      border-bottom: 2px solid #00aaff;
+      padding-bottom: 5px;
     }
 
-    .skill-card img {
-      width: 60px;
-      height: 60px;
+    .skills-list {
+      margin-bottom: 20px;
     }
 
-    .skill-card p {
+    .skills-list strong {
+      color: #00aaff;
+    }
+
+    .languages {
+      display: flex;
+      gap: 15px;
       margin-top: 10px;
-      font-weight: bold;
+    }
+
+    .languages span {
+      background-color: #00aaff;
       color: white;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
+  <canvas id="bgCanvas"></canvas>
 
-<!-- Animated background -->
-<canvas id="bgCanvas"></canvas>
+  <header>
+    <img src="images/logo.png" alt="Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html" class="active">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<!-- Navbar -->
-<header>
-  <img src="images/logo.png" alt="Logo" class="logo">
-  <nav>
-    <ul>
-      <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-      <li><a href="about.html"><i class="fa fa-user"></i> About</a></li>
-      <li><a href="skills.html" class="active"><i class="fa fa-code"></i> Skills</a></li>
-      <li><a href="projects.html"><i class="fa fa-rocket"></i> Projects</a></li>
-      <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
-      <li><a href="achievements.html"><i class="fa fa-trophy"></i> Achievements</a></li>
-    </ul>
-  </nav>
-</header>
+  <h1>My Skills</h1>
+  <div class="skills-section">
+    <div class="skills-list">
+      <h2>Cybersecurity & Networking</h2>
+      <p>Threat Analysis, Vulnerability Assessment, Network Security, Secure Programming, Digital Forensics, Incident Response, Risk Management</p>
+    </div>
 
-<!-- Skills Section -->
-<h1>My Skills</h1>
-<div class="skills-grid">
-  <div class="skill-card">
-    <img src="images/html.png" alt="HTML">
-    <p>HTML</p>
+    <div class="skills-list">
+      <h2>Tools & Platforms</h2>
+      <p>Wireshark, Burp Suite, Splunk, Metasploit, Nmap, SAP BW/BI, HANA, Advanced Excel</p>
+    </div>
+
+    <div class="skills-list">
+      <h2>Programming</h2>
+      <p>Python, Java, C++, HTML, CSS, JavaScript</p>
+    </div>
+
+    <div class="skills-list">
+      <h2>Cloud & DevOps</h2>
+      <p>AWS (basic), Git, Docker</p>
+    </div>
+
+    <div class="skills-list">
+      <h2>Testing & Debugging</h2>
+      <p>Unit Testing, Secure Code Review, Automation Testing</p>
+    </div>
+
+    <div class="skills-list">
+      <h2>Databases</h2>
+      <p>SQL, MySQL, Database Design</p>
+    </div>
+
+    <div class="skills-list">
+      <h2>Languages</h2>
+      <div class="languages">
+        <span>English</span>
+        <span>Hindi</span>
+        <span>Malayalam</span>
+        <span>Tamil</span>
+      </div>
+    </div>
   </div>
-  <div class="skill-card">
-    <img src="images/css.png" alt="CSS">
-    <p>CSS</p>
-  </div>
-  <div class="skill-card">
-    <img src="images/javascript.png" alt="JavaScript">
-    <p>JavaScript</p>
-  </div>
-  <div class="skill-card">
-    <img src="images/python.png" alt="Python">
-    <p>Python</p>
-  </div>
-  <div class="skill-card">
-    <img src="images/react.png" alt="React">
-    <p>React</p>
-  </div>
-  <div class="skill-card">
-    <img src="images/sql.png" alt="SQL">
-    <p>SQL</p>
-  </div>
-</div>
 
-<!-- Animated Background Script -->
-<script>
-  const canvas = document.getElementById('bgCanvas');
-  const ctx = canvas.getContext('2d');
-  let width, height, particles;
+  <script>
+    const canvas = document.getElementById('bgCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height, particles;
 
-  function initCanvas() {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
+    function initCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
 
-    particles = Array.from({ length: 80 }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      vx: (Math.random() - 0.5),
-      vy: (Math.random() - 0.5)
-    }));
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, width, height);
-
-    for (let p of particles) {
-      p.x += p.vx;
-      p.y += p.vy;
-
-      if (p.x < 0 || p.x > width) p.vx *= -1;
-      if (p.y < 0 || p.y > height) p.vy *= -1;
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-      ctx.fillStyle = 'white';
-      ctx.fill();
+      particles = Array.from({ length: 80 }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5),
+        vy: (Math.random() - 0.5)
+      }));
     }
 
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 100) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = 'rgba(255,255,255,0.1)';
-          ctx.stroke();
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+
+      for (let p of particles) {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+        ctx.fillStyle = 'white';
+        ctx.fill();
+      }
+
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 100) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+            ctx.stroke();
+          }
         }
       }
+
+      requestAnimationFrame(draw);
     }
 
-    requestAnimationFrame(draw);
-  }
-
-  window.addEventListener('resize', initCanvas);
-  initCanvas();
-  draw();
-</script>
+    window.addEventListener('resize', initCanvas);
+    initCanvas();
+    draw();
+  </script>
 
 </body>
 </html>
