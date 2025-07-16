@@ -322,3 +322,26 @@ body, html {
   font-weight: bold;
   color: white;
 }
+/* Add hover glow effect to profile image */
+  .hero-img img:hover {
+    box-shadow: 0 0 20px 5px #007bff;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  /* Optional: styling for new value line */
+  .value-line {
+    font-style: italic;
+    font-size: 1rem;
+    margin-top: -10px;
+    color: #ccc;
+  }
+
+  /* New Download CV button style */
+  .btn.cv-btn {
+    background-color: #28a745;
+    margin-left: 10px;
+  }
+
+  .btn.cv-btn:hover {
+    background-color: #218838;
+  }
