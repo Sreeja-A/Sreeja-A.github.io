@@ -4,61 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sreeja Ajithkumar | Aspiring Cyber Security Analyst</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    body, html {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
       height: 100%;
-      background-color: #121212;
       font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
       color: #fff;
+      overflow-x: hidden;
     }
-    .hero-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 50px;
-      position: relative;
-      height: 100vh;
-    }
-    .hero-text {
-      z-index: 1;
-    }
-    .highlight {
-      color: #007bff; /* changed to blue */
-    }
-    .btn {
-      display: inline-block;
-      background-color: #007bff; /* changed to blue */
-      color: #fff;
-      padding: 10px 20px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 20px 0;
-    }
-    .social-icons a {
-      margin-right: 10px;
-      color: #fff;
-      font-size: 20px;
-    }
-    .hero-img img {
-      width: 300px;
-      border-radius: 20px;
-      z-index: 1;
-    }
-    .hero-img {
-      z-index: 1;
-    }
+
     #particles-js {
-      position: absolute;
+      position: fixed;
       width: 100%;
       height: 100%;
       top: 0;
       left: 0;
       z-index: 0;
     }
+
     nav {
       display: flex;
       justify-content: space-between;
@@ -68,80 +38,232 @@
       position: fixed;
       width: 100%;
       top: 0;
-      z-index: 2;
+      z-index: 10;
     }
+
+    nav .logo img {
+      height: 40px;
+    }
+
     .nav-links {
       list-style: none;
       display: flex;
       gap: 20px;
     }
+
     .nav-links li a {
       text-decoration: none;
       color: white;
       font-weight: bold;
       position: relative;
     }
+
     .nav-links li a.active::after {
       content: '';
       display: block;
       width: 100%;
       height: 2px;
-      background-color: #007bff; /* changed to blue */
+      background-color: #007bff;
       position: absolute;
       bottom: -5px;
       left: 0;
     }
-    .nav-icons a {
+
+    .hero-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding-top: 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card {
+      background-color: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 30px rgba(0, 170, 255, 0.15);
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 1000px;
+      width: 90%;
+      z-index: 1;
+      position: relative;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+      padding-right: 30px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-text h2 {
+      font-size: 2rem;
+      margin-top: 10px;
+    }
+
+    .hero-text h3 {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    .value-line {
+      margin: 15px 0;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #bbb;
+    }
+
+    .highlight {
+      color: #007bff;
+    }
+
+    .button-row {
+      margin-top: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #007bff;
       color: white;
-      margin-left: 10px;
-      font-size: 18px;
+      padding: 10px 20px;
+      margin-right: 15px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #005bb5;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      color: white;
+      margin-right: 15px;
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #00bfff;
+    }
+
+    .hero-img {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-img img {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Blue floating circles like the red ones in reference */
+    .blue-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, #007bff, #003b80);
+      z-index: 0;
+      opacity: 0.2;
+    }
+
+    .circle-1 {
+      width: 250px;
+      height: 250px;
+      top: 50px;
+      left: -100px;
+    }
+
+    .circle-2 {
+      width: 180px;
+      height: 180px;
+      bottom: 30px;
+      right: -60px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero-text {
+        padding-right: 0;
+      }
+
+      .hero-img {
+        margin-top: 30px;
+      }
     }
   </style>
 </head>
 <body>
   <div id="particles-js"></div>
 
+  <div class="blue-circle circle-1"></div>
+  <div class="blue-circle circle-2"></div>
+
+  <!-- Navigation -->
   <nav>
     <div class="logo">
-      <img src="assets/logo.png" alt="Logo" style="height: 40px;">
+      <img src="assets/logo.png" alt="Logo">
     </div>
     <ul class="nav-links">
-      <li><a href="index.html" class="nav-links-a active"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="about.html" class="nav-links-a"><i class="fas fa-user"></i> About</a></li>
-      <li><a href="skills.html" class="nav-links-a"><i class="fas fa-code"></i> Skills</a></li>
-      <li><a href="projects.html" class="nav-links-a"><i class="fas fa-project-diagram"></i> Projects</a></li>
-      <li><a href="contact.html" class="nav-links-a"><i class="fas fa-envelope"></i> Contact</a></li>
-      <li><a href="achievements.html" class="nav-links-a"><i class="fas fa-trophy"></i> Achievements</a></li>
+      <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="skills.html"><i class="fas fa-code"></i> Skills</a></li>
+      <li><a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li><a href="achievements.html"><i class="fas fa-trophy"></i> Achievements</a></li>
     </ul>
   </nav>
 
-<header class="hero-section">
-  <div class="hero-text">
-    <h1>Hi,</h1>
-    <h2>I'm <span class="highlight">Sreeja</span></h2>
-    <h3>Aspiring Cyber Security Analyst</h3>
-    <p class="value-line">
-      <em>Bridging cyber threats and security solutions through hands-on analysis and continuous learning.</em>
-    </p>
+  <!-- Hero Section -->
+  <section class="hero-wrapper">
+    <div class="hero-card">
+      <div class="hero-text">
+        <h1>Hi,</h1>
+        <h2>I'm <span class="highlight">Sreeja</span></h2>
+        <h3>Aspiring Cyber Security Analyst</h3>
+        <p class="value-line">
+          Bridging cyber threats and security solutions through hands-on analysis and continuous learning.
+        </p>
 
-    <div class="button-row">
-      <a href="contact.html" class="btn">Contact</a>
-      <a href="assets/Sreeja_Ajith_Kumar_Resume.pdf" class="btn cv-btn" download>Download CV</a>
+        <div class="button-row">
+          <a href="contact.html" class="btn">Contact</a>
+          <a href="assets/Sreeja_Ajith_Kumar_Resume.pdf" class="btn" download>Download CV</a>
+        </div>
+
+        <div class="social-icons">
+          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://behance.net" target="_blank"><i class="fab fa-behance"></i></a>
+        </div>
+      </div>
+
+      <div class="hero-img">
+        <img src="profilepic.JPG" alt="Sreeja Profile">
+      </div>
     </div>
+  </section>
 
-    <div class="social-icons">
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://behance.net" target="_blank"><i class="fab fa-behance"></i></a>
-    </div>
-  </div>
-
-  <div class="hero-img">
-    <img src="profilepic.JPG" alt="Sreeja Profile">
-  </div>
-</header>
-
-
+  <!-- Particles JS Script -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js", {
@@ -160,5 +282,4 @@
     });
   </script>
 </body>
-
 </html>
