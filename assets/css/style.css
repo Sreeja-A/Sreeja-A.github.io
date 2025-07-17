@@ -340,31 +340,54 @@ footer i:hover {
   border-radius: 15px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
+/* Clean, clear, glowing blue circles */
+.blue-circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #007bff; /* solid blue */
+  z-index: 0;
+  opacity: 1;
+  box-shadow: 0 0 60px #007bff, 0 0 120px #0055aa;
+  animation: pulse 10s ease-in-out infinite;
+}
+
+.circle-1 {
+  width: 200px;
+  height: 200px;
+  top: 60px;
+  left: -80px;
+  animation: float1 12s ease-in-out infinite;
+}
+
+.circle-2 {
+  width: 140px;
+  height: 140px;
+  bottom: 50px;
+  right: -50px;
+  animation: float2 14s ease-in-out infinite;
+}
+
+/* Animation for floating motion */
 @keyframes float1 {
   0%   { transform: translate(0, 0); }
-  50%  { transform: translate(20px, -30px); }
+  50%  { transform: translate(30px, -20px); }
   100% { transform: translate(0, 0); }
 }
 
 @keyframes float2 {
   0%   { transform: translate(0, 0); }
-  50%  { transform: translate(-25px, 20px); }
+  50%  { transform: translate(-20px, 25px); }
   100% { transform: translate(0, 0); }
 }
 
-.circle-1 {
-  width: 220px;
-  height: 220px;
-  top: 80px;
-  left: -100px;
-  animation: float1 8s ease-in-out infinite;
+/* Optional subtle pulse for glow */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 60px #007bff, 0 0 120px #0055aa;
+  }
+  50% {
+    box-shadow: 0 0 80px #33adff, 0 0 140px #003f88;
+  }
 }
 
-.circle-2 {
-  width: 160px;
-  height: 160px;
-  bottom: 60px;
-  right: -70px;
-  animation: float2 10s ease-in-out infinite;
-}
 
