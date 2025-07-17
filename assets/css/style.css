@@ -351,62 +351,43 @@ footer i:hover {
   animation: pulse 10s ease-in-out infinite;
 }
 
-/* Solid Blue Circles */
-.blue-circle {
+/* Solid Blue Floating Circles */
+.circle {
   position: absolute;
   border-radius: 50%;
-  background-color: #007bff; /* Solid blue */
-  z-index: 0;
+  background-color: #003b80; /* Deep solid blue */
   opacity: 1;
-  animation: float 10s ease-in-out infinite;
+  z-index: 0;
+  animation: floatUpDown 8s ease-in-out infinite;
 }
 
-/* Individual Circle Sizes & Positions */
 .circle-1 {
-  width: 200px;
-  height: 200px;
-  top: 50px;
-  left: 30px;
+  width: 220px;
+  height: 220px;
+  top: 60px;
+  left: -60px;
   animation-delay: 0s;
 }
 
 .circle-2 {
   width: 150px;
   height: 150px;
-  bottom: 60px;
-  right: 50px;
+  bottom: 80px;
+  right: 40px;
   animation-delay: 2s;
 }
 
-/* Simple Float Animation */
-@keyframes float {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-15px); }
+.circle-3 {
+  width: 100px;
+  height: 100px;
+  bottom: 100px;
+  left: 80px;
+  animation-delay: 4s;
+}
+
+/* Floating Animation */
+@keyframes floatUpDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
   100% { transform: translateY(0); }
 }
-
-
-/* Animation for floating motion */
-@keyframes float1 {
-  0%   { transform: translate(0, 0); }
-  50%  { transform: translate(30px, -20px); }
-  100% { transform: translate(0, 0); }
-}
-
-@keyframes float2 {
-  0%   { transform: translate(0, 0); }
-  50%  { transform: translate(-20px, 25px); }
-  100% { transform: translate(0, 0); }
-}
-
-/* Optional subtle pulse for glow */
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 0 60px #007bff, 0 0 120px #0055aa;
-  }
-  50% {
-    box-shadow: 0 0 80px #33adff, 0 0 140px #003f88;
-  }
-}
-
-
