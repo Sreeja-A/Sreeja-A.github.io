@@ -15,7 +15,7 @@
     body, html {
       height: 100%;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
+      background-color: #0a0d1b; /* Dark navy */
       color: #fff;
       overflow-x: hidden;
     }
@@ -80,8 +80,7 @@
     }
 
     .hero-card {
-      background-color: rgba(0, 22, 51, 0.92); /* updated to deep navy */
-      backdrop-filter: blur(8px);
+      background-color: rgba(0, 22, 51, 0.95);
       box-shadow: 0 0 50px rgba(0, 191, 255, 0.3);
       display: flex;
       flex-wrap: wrap;
@@ -174,14 +173,14 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
-    /* Blue floating circles */
-    .blue-circle {
+    /* Solid Blue Floating Circles */
+    .circle {
       position: absolute;
       border-radius: 50%;
-      background: radial-gradient(circle at center, rgba(0, 123, 255, 0.4), rgba(0, 60, 140, 0.2));
+      background-color: #003b80;
+      opacity: 1;
       z-index: 0;
-      opacity: 0.3;
-      filter: blur(20px);
+      animation: floatUpDown 8s ease-in-out infinite;
     }
 
     .circle-1 {
@@ -189,6 +188,7 @@
       height: 220px;
       top: 80px;
       left: -100px;
+      animation-delay: 0s;
     }
 
     .circle-2 {
@@ -196,6 +196,21 @@
       height: 160px;
       bottom: 60px;
       right: -70px;
+      animation-delay: 3s;
+    }
+
+    .circle-3 {
+      width: 100px;
+      height: 100px;
+      bottom: 100px;
+      left: 80px;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes floatUpDown {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
@@ -218,9 +233,10 @@
 <body>
   <div id="particles-js"></div>
 
-  <!-- Floating blue circles -->
-  <div class="blue-circle circle-1"></div>
-  <div class="blue-circle circle-2"></div>
+  <!-- Solid Blue Floating Circles -->
+  <div class="circle circle-1"></div>
+  <div class="circle circle-2"></div>
+  <div class="circle circle-3"></div>
 
   <!-- Navigation -->
   <nav>
