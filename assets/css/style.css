@@ -456,11 +456,15 @@ html {
   color: #00bfff;
 }
 
-.nav-links a.active {
+.nav-links li a.active {
   color: #00bfff;
+  border-bottom: 2px solid #00bfff;
 }
+
 
 .nav-links li a.active {
   color: #00bfff;
   border-bottom: 2px solid #00bfff;
 }
+
+
