@@ -87,6 +87,76 @@
     .section p {
       margin: 5px 0;
     }
+
+    /* ========== Certificates section styles ========== */
+    .cert-list {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 20px 0;
+    }
+    .cert-list li {
+      position: relative;
+      padding-left: 22px;
+      margin: 10px 0;
+    }
+    .cert-list li::before {
+      content: "◆";
+      color: #00d0ff;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translateY(2px) scale(.85);
+    }
+    .view-link {
+      margin-left: 10px;
+      padding: 3px 8px;
+      border: 1px solid rgba(0,208,255,.45);
+      border-radius: 999px;
+      text-decoration: none;
+      color: #b9f9ff;
+      transition: all .18s ease;
+      font-size: 0.92rem;
+    }
+    .view-link:hover {
+      background: rgba(0,208,255,.12);
+      box-shadow: 0 0 16px rgba(0,208,255,.25);
+    }
+
+    /* Optional image grid */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 12px;
+    }
+    .cert-card {
+      display: block;
+      background: rgba(20,20,20,.85);
+      border: 1px solid rgba(0,208,255,.3);
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .cert-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(0,208,255,.18);
+      border-color: rgba(0,208,255,.6);
+    }
+    .cert-card img {
+      display: block;
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .cert-caption {
+      display: block;
+      padding: 10px 12px;
+      color: #dff8ff;
+      font-size: .95rem;
+      text-align: center;
+    }
+    /* ========== end Certificates styles ========== */
   </style>
 </head>
 <body>
@@ -132,6 +202,48 @@
         <li>📜 Certificate of paper presentation at SCI’17</li>
       </ul>
     </div>
+
+    <!-- ========== NEW: Certificates section ========== -->
+    <div class="section" id="certificates">
+      <h2>Certificates</h2>
+
+      <!-- Option A: Simple list with links to your PDFs/images -->
+      <ul class="cert-list">
+        <!-- Replace href paths with your real files -->
+        <li>
+          Post Graduate College Topper — 2017
+          <a class="view-link" href="assets/certificates/pg-topper-2017.pdf" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          Participation — ICFTE 2016
+          <a class="view-link" href="assets/certificates/icfte-2016.pdf" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          Paper Presentation — SCI’17
+          <a class="view-link" href="assets/certificates/sci17-presentation.pdf" target="_blank" rel="noopener">View</a>
+        </li>
+      </ul>
+
+      <!-- Option B (optional): Thumbnail grid. Keep or remove. -->
+      <div class="cert-grid">
+        <!-- Use real image paths; thumbnails can be smaller copies -->
+        <a class="cert-card" href="assets/certificates/pg-topper-2017.jpg" target="_blank" rel="noopener">
+          <img src="assets/certificates/pg-topper-2017-thumb.jpg" alt="PG Topper 2017 certificate">
+          <span class="cert-caption">PG Topper 2017</span>
+        </a>
+
+        <a class="cert-card" href="assets/certificates/icfte-2016.jpg" target="_blank" rel="noopener">
+          <img src="assets/certificates/icfte-2016-thumb.jpg" alt="ICFTE 2016 Participation certificate">
+          <span class="cert-caption">ICFTE 2016</span>
+        </a>
+
+        <a class="cert-card" href="assets/certificates/sci17-presentation.jpg" target="_blank" rel="noopener">
+          <img src="assets/certificates/sci17-presentation-thumb.jpg" alt="SCI’17 Paper Presentation certificate">
+          <span class="cert-caption">SCI’17 Presentation</span>
+        </a>
+      </div>
+    </div>
+    <!-- ========== end Certificates section ========== -->
   </div>
 
   <!-- Particle JS script -->
@@ -169,4 +281,3 @@
 
 </body>
 </html>
-
