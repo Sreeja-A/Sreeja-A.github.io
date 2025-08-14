@@ -6,80 +6,88 @@
   <title>Achievements - Sreeja Ajithkumar</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
+    /* Base */
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #fff;
+      color: #ffffff;
     }
 
     #particles-js {
-      background: #000;
-      height: 100%;
-      width: 100%;
       position: fixed;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       z-index: -1;
+      background: #0d0d0d;
     }
 
+    /* Nav (match contact page) */
     nav {
-      background-color: #000;
-      padding: 10px 0;
       display: flex;
       justify-content: flex-end;
       align-items: center;
+      background-color: #000;
+      padding: 15px 30px;
+      position: fixed;
+      top: 0; width: 100%;
+      z-index: 1000;
     }
-
     nav a {
       color: #fff;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 15px;
+      padding-bottom: 5px;
     }
-
     nav a:hover,
     nav a.active {
-      color: #00bfff;
+      color: #00bfff;                 /* same as contact nav */
       border-bottom: 2px solid #00bfff;
     }
 
+    /* Card container (match contact card style) */
     .container {
       max-width: 900px;
-      margin: 80px auto;
+      margin: 120px auto 80px;        /* push below fixed nav */
       padding: 40px;
-      background: rgba(60, 60, 60, 0.9);
-      border-radius: 15px;
-      box-shadow: 0 0 20px #00bfff;
+      background: rgba(31, 31, 31, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 123, 255, 0.2); /* same glow as contact */
     }
 
+    /* Headings use #007bff like contact card */
     h1 {
       text-align: center;
-      color: #00bfff;
-      margin-bottom: 30px;
+      color: #007bff;
+      margin-bottom: 25px;
+      font-size: 2.2rem;
     }
-
     h2 {
-      border-left: 5px solid #00bfff;
+      border-left: 5px solid #007bff;
       padding-left: 10px;
-      margin-top: 30px;
-      color: #00bfff;
+      margin-top: 28px;
+      color: #007bff;
+      font-size: 1.4rem;
     }
 
     ul { padding-left: 20px; }
     li { margin-bottom: 10px; }
 
-    a { color: #00bfff; }
+    /* Inline links: default light, hover #007bff like contact card links */
+    a { color: #ccc; text-decoration: none; }
+    a:hover { color: #007bff; }
 
     .highlight {
-      color: #00bfff;
+      color: #007bff;  /* primary accent */
       font-weight: bold;
     }
 
-    .section p { margin: 5px 0; }
+    .section p { margin: 5px 0; color: #e6e6e6; }
 
-    /* ===== Certificates: list + button ===== */
+    /* ===== Certificates: list + button (styled to contact palette) ===== */
     .cert-list {
       list-style: none;
       padding: 0;
@@ -92,28 +100,29 @@
     }
     .cert-list li::before {
       content: "◆";
-      color: #00bfff;
+      color: #007bff;
       position: absolute;
-      left: 0;
-      top: 0;
+      left: 0; top: 0;
       transform: translateY(2px) scale(.85);
     }
     .view-link {
       margin-left: 10px;
-      padding: 3px 8px;
-      border: 1px solid rgba(0,191,255,.45);
+      padding: 4px 10px;
+      border: 1px solid rgba(0,123,255,.45);
       border-radius: 999px;
       text-decoration: none;
-      color: #b9f9ff;
+      color: #d9ecff;
       transition: all .18s ease;
       font-size: 0.92rem;
+      background: transparent;
     }
     .view-link:hover {
-      background: rgba(0,191,255,.12);
-      box-shadow: 0 0 16px rgba(0,191,255,.25);
+      background: rgba(0,123,255,.12);
+      box-shadow: 0 0 16px rgba(0,123,255,.25);
+      color: #ffffff;
     }
 
-    /* ===== Certificates: image grid (optional) ===== */
+    /* ===== Certificates: image grid (optional; matches palette) ===== */
     .cert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -122,8 +131,8 @@
     }
     .cert-card {
       display: block;
-      background: rgba(20,20,20,.85);
-      border: 1px solid rgba(0,191,255,.30);             /* unified */
+      background: rgba(20,20,20,.9);
+      border: 1px solid rgba(0,123,255,.30);
       border-radius: 12px;
       overflow: hidden;
       text-decoration: none;
@@ -131,8 +140,8 @@
     }
     .cert-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 28px rgba(0,191,255,.18);         /* unified */
-      border-color: rgba(0,191,255,.60);                  /* unified */
+      box-shadow: 0 8px 28px rgba(0,123,255,.22);
+      border-color: rgba(0,123,255,.6);
     }
     .cert-card img {
       display: block;
@@ -143,17 +152,17 @@
     .cert-caption {
       display: block;
       padding: 10px 12px;
-      color: #dff8ff;
+      color: #dff1ff;
       font-size: .95rem;
       text-align: center;
     }
-    /* ===== end Certificates styles ===== */
   </style>
 </head>
 <body>
 
   <div id="particles-js"></div>
 
+  <!-- Navigation -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -169,10 +178,10 @@
     <div class="section">
       <h2>Conferences / Seminars</h2>
       <p><span class="highlight">International Conference on Future Technology in Engineering (ICFTE) 2016</span><br>
-      - Applied leadership by coordinating and comparing the conference activities.</p>
+      — Applied leadership by coordinating and comparing the conference activities.</p>
 
       <p><span class="highlight">National Symposium on Computational Intelligence (SCI'17)</span><br>
-      - Presented paper and shared ideas with experts from various IITs.</p>
+      — Presented paper and shared ideas with experts from various IITs.</p>
     </div>
 
     <div class="section">
@@ -194,11 +203,11 @@
       </ul>
     </div>
 
-    <!-- ===== Certificates ===== -->
+    <!-- Certificates -->
     <div class="section" id="certificates">
       <h2>Certificates</h2>
 
-      <!-- Option A: Simple list with links -->
+      <!-- List with PDF links -->
       <ul class="cert-list">
         <li>
           Post Graduate College Topper — 2017
@@ -222,7 +231,7 @@
         </li>
       </ul>
 
-      <!-- Option B: Thumbnail grid (optional; remove if not needed) -->
+      <!-- Optional thumbnail grid (delete if not needed) -->
       <div class="cert-grid">
         <a class="cert-card" href="assets/certificates/icfte-2016.jpg" target="_blank" rel="noopener">
           <img src="assets/certificates/icfte-2016-thumb.jpg" alt="ICFTE 2016 Participation certificate">
@@ -245,39 +254,24 @@
         </a>
       </div>
     </div>
-    <!-- ===== end Certificates ===== -->
+    <!-- /Certificates -->
   </div>
 
-  <!-- Particle JS script -->
+  <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
-    particlesJS('particles-js',
-    {
-      "particles": {
-        "number": { "value": 80 },
-        "color": { "value": "#ffffff" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.5 },
-        "size": { "value": 2 },
-        "line_linked": {
-          "enable": true,
-          "distance": 150,
-          "color": "#ffffff",
-          "opacity": 0.4,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 2
-        }
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 100 },
+        size: { value: 2 },
+        color: { value: '#ffffff' },
+        line_linked: { enable: true, color: '#ffffff' },
+        move: { speed: 1 }
       },
-      "interactivity": {
-        "events": {
-          "onhover": { "enable": true, "mode": "grab" },
-          "onclick": { "enable": true, "mode": "push" }
-        }
+      interactivity: {
+        events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' } }
       },
-      "retina_detect": true
+      retina_detect: true
     });
   </script>
 
