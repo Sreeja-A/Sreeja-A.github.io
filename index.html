@@ -6,11 +6,18 @@
   <title>Sreeja Ajithkumar | Aspiring Cyber Security Analyst</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root{
+      --blue:#007bff;       /* primary (matches contact card) */
+      --cyan:#00bfff;       /* nav accent */
+      --ink:#eaf4ff;
+      --panel:rgba(0, 22, 51, 0.95);
+      --card:rgba(20,20,20,.92);
+      --glow:rgba(0,191,255,.30);
+      --border:rgba(0,123,255,.32);
+      --text:#d0d7e2;
     }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body, html {
       height: 100%;
@@ -24,11 +31,11 @@
       position: fixed;
       width: 100%;
       height: 100%;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       z-index: 0;
     }
 
+    /* NAV */
     nav {
       display: flex;
       justify-content: space-between;
@@ -40,193 +47,111 @@
       top: 0;
       z-index: 10;
     }
-
-    nav .logo img {
-      height: 40px;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
+    nav .logo img { height: 40px; }
+    .nav-links { list-style: none; display: flex; gap: 20px; }
     .nav-links li a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      position: relative;
+      text-decoration: none; color: white; font-weight: bold; position: relative;
+      padding-bottom: 5px;
     }
-
     .nav-links li a.active::after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 2px;
-      background-color: #007bff;
-      position: absolute;
-      bottom: -5px;
-      left: 0;
+      content: ''; display: block; width: 100%; height: 2px;
+      background-color: var(--cyan); position: absolute; bottom: -5px; left: 0;
     }
+    .nav-links li a:hover { color: var(--cyan); }
 
+    /* HERO WRAPPER */
     .hero-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      padding-top: 80px;
-      position: relative;
-      z-index: 1;
+      display: flex; justify-content: center; align-items: center;
+      min-height: 100vh; padding-top: 100px; position: relative; z-index: 1;
     }
 
+    /* HERO CARD */
     .hero-card {
-      background-color: rgba(0, 22, 51, 0.95);
-      box-shadow: 0 0 50px rgba(0, 191, 255, 0.3);
-      display: flex;
-      flex-wrap: wrap;
-      border-radius: 20px;
-      padding: 40px;
-      max-width: 1000px;
-      width: 90%;
-      z-index: 1;
+      background-color: var(--panel);
+      box-shadow: 0 0 50px var(--glow);
+      display: grid; grid-template-columns: 1.15fr .85fr; gap: 28px;
+      border-radius: 20px; padding: 40px; max-width: 1100px; width: 92%;
       position: relative;
-      transition: background 0.5s ease;
     }
+    @media (max-width: 900px){ .hero-card{ grid-template-columns: 1fr; padding: 28px; } }
 
-    .hero-text {
-      flex: 1;
-      min-width: 280px;
-      padding-right: 30px;
-    }
+    .hero-text { min-width: 280px; }
+    .hero-text h1 { font-size: 2.4rem; color:#ffffffcc; }
+    .hero-text h2 { font-size: 2rem; margin-top: 6px; }
+    .hero-text h3 { font-size: 1.1rem; margin-top: 8px; color: #ccc; }
+    .highlight { color: var(--blue); }
 
-    .hero-text h1 {
-      font-size: 2.5rem;
-    }
+    .value-line { margin: 12px 0; font-style: italic; font-size: 0.95rem; color: #bbb; max-width: 60ch; }
 
-    .hero-text h2 {
-      font-size: 2rem;
-      margin-top: 10px;
-    }
+    /* Bullets */
+    .hero-bullets { list-style: none; margin: 10px 0 16px; padding: 0; color: #d9eaff; }
+    .hero-bullets li { margin: 6px 0; position: relative; padding-left: 18px; }
+    .hero-bullets li::before { content: "•"; position: absolute; left: 0; color: var(--cyan); }
 
-    .hero-text h3 {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      color: #ccc;
-    }
-
-    .value-line {
-      margin: 15px 0;
-      font-style: italic;
-      font-size: 0.95rem;
-      color: #bbb;
-    }
-
-    .highlight {
-      color: #007bff;
-    }
-
-    .button-row {
-      margin-top: 15px;
-    }
-
+    /* Buttons */
+    .button-row { margin: 14px 0 10px; display:flex; gap:12px; flex-wrap:wrap; }
     .btn {
-      display: inline-block;
-      background-color: #007bff;
-      color: white;
-      padding: 10px 20px;
-      margin-right: 15px;
-      border-radius: 6px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 0.3s ease;
+      display: inline-block; background-color: var(--blue); color: white;
+      padding: 10px 16px; border-radius: 10px; font-weight: 700; text-decoration: none;
+      border: 1px solid var(--border); box-shadow: 0 6px 20px var(--glow);
+      transition: transform .15s, box-shadow .15s, background .3s;
     }
+    .btn:hover { transform: translateY(-1px); background-color: #0066dd; box-shadow: 0 10px 28px rgba(0,123,255,.35); }
+    .btn-outline { background: transparent; color: #d9ecff; }
+    .btn-outline:hover { background: rgba(0,123,255,.12); }
 
-    .btn:hover {
-      background-color: #005bb5;
-    }
+    /* Social */
+    .social-icons { margin-top: 12px; }
+    .social-icons a { color: white; margin-right: 14px; font-size: 20px; transition: color .25s; }
+    .social-icons a:hover { color: var(--cyan); }
 
-    .social-icons {
-      margin-top: 20px;
-    }
-
-    .social-icons a {
-      color: white;
-      margin-right: 15px;
-      font-size: 20px;
-      transition: color 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      color: #00bfff;
-    }
-
-    .hero-img {
-      flex: 0.8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
+    /* Portrait */
+    .hero-img { align-self: center; justify-self: center; display:flex; justify-content:center; }
     .hero-img img {
-      width: 300px;
-      border-radius: 20px;
+      width: 320px; max-width: 100%; border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
-    /* Solid Blue Floating Circles */
-    .circle {
-      position: absolute;
-      border-radius: 50%;
-      background-color: #003b80;
-      opacity: 1;
-      z-index: 0;
-      animation: floatUpDown 8s ease-in-out infinite;
+    /* Badges (certs) */
+    .badges { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px }
+    .badge {
+      display:inline-flex; align-items:center; gap:8px; padding:6px 10px;
+      border-radius:999px; border:1px solid var(--border); color:#dff1ff;
+      background:rgba(255,255,255,.03); text-decoration:none; font-size:.9rem;
     }
+    .badge .dot { width:8px; height:8px; border-radius:50%; background:var(--blue); box-shadow:0 0 8px rgba(0,123,255,.4) }
+    .badge:hover { background: rgba(0,123,255,.10); }
 
-    .circle-1 {
-      width: 220px;
-      height: 220px;
-      top: 80px;
-      left: -100px;
-      animation-delay: 0s;
+    /* Featured Work */
+    .featured-wrap { max-width: 1100px; margin: 24px auto 80px; padding: 0 20px; }
+    .featured-wrap h2 { color: var(--blue); font-size: 1.6rem; margin: 0 0 12px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 16px; display: flex; flex-direction: column; gap: 8px;
     }
+    .card h3 { margin: 0; color: #e9f5ff; font-size: 1.1rem; }
+    .card p { margin: 0; color: var(--text); min-height: 54px; }
+    .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .tag { font-size: .82rem; padding: 3px 8px; border-radius: 999px; border: 1px solid var(--border); color: #cfe4ff; }
+    .actions { margin-top: auto; display:flex; gap:10px; }
 
-    .circle-2 {
-      width: 160px;
-      height: 160px;
-      bottom: 60px;
-      right: -70px;
-      animation-delay: 3s;
-    }
+    /* Floating circles */
+    .circle { position: absolute; border-radius: 50%; background-color: #003b80; opacity: 1; z-index: 0; animation: floatUpDown 8s ease-in-out infinite; }
+    .circle-1 { width: 220px; height: 220px; top: 80px; left: -100px; animation-delay: 0s; }
+    .circle-2 { width: 160px; height: 160px; bottom: 60px; right: -70px; animation-delay: 3s; }
+    .circle-3 { width: 100px; height: 100px; bottom: 100px; left: 80px; animation-delay: 1.5s; }
+    @keyframes floatUpDown { 0% { transform: translateY(0); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0); } }
 
-    .circle-3 {
-      width: 100px;
-      height: 100px;
-      bottom: 100px;
-      left: 80px;
-      animation-delay: 1.5s;
-    }
-
-    @keyframes floatUpDown {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-      100% { transform: translateY(0); }
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce){
+      *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+      .circle{display:none;}
     }
 
     @media (max-width: 768px) {
-      .hero-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .hero-text {
-        padding-right: 0;
-      }
-
-      .hero-img {
-        margin-top: 30px;
-      }
+      .hero-img { margin-top: 10px; }
+      .social-icons a { margin-right: 10px; }
     }
   </style>
 </head>
@@ -253,9 +178,10 @@
     </ul>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- HERO -->
   <section class="hero-wrapper">
     <div class="hero-card">
+      <!-- Left: copy + CTAs -->
       <div class="hero-text">
         <h1>Hi,</h1>
         <h2>I'm <span class="highlight">Sreeja</span></h2>
@@ -264,21 +190,91 @@
           Bridging cyber threats and security solutions through hands-on analysis and continuous learning.
         </p>
 
+        <!-- Bullet list -->
+        <ul class="hero-bullets">
+          <li>Google & Microsoft Cybersecurity Certified</li>
+          <li>Hands-on with SIEM analysis, Linux hardening, Python automation</li>
+          <li>Open to SOC Analyst / Cybersecurity Analyst roles</li>
+        </ul>
+
+        <!-- CTAs -->
         <div class="button-row">
           <a href="contact.html" class="btn">Contact</a>
-          <a href="assets/Sreeja_Ajith_Kumar_Resume.pdf" class="btn" download>Download CV</a>
+          <!-- Update this path to your real PDF -->
+          <a href="assets/Sreeja_Ajith_Kumar_Resume.pdf" class="btn btn-outline" target="_blank" rel="noopener">Download CV</a>
         </div>
 
-        <div class="social-icons">
-          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://behance.net" target="_blank"><i class="fab fa-behance"></i></a>
+        <!-- Badge row (links to your cert images) -->
+        <div class="badges">
+          <a class="badge" href="images/google-cybersecurity.jpg" target="_blank" rel="noopener" title="View Google Cybersecurity Certificate">
+            <span class="dot"></span><span>Google Cybersecurity</span>
+          </a>
+          <a class="badge" href="images/microsoft-cybersecurity.jpg" target="_blank" rel="noopener" title="View Microsoft Cybersecurity Analyst Certificate">
+            <span class="dot"></span><span>Microsoft Cybersecurity Analyst</span>
+          </a>
+        </div>
+
+        <!-- Social -->
+        <div class="social-icons" aria-label="Social links">
+          <a href="https://linkedin.com" target="_blank" rel="me noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com" target="_blank" rel="me noopener" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://behance.net" target="_blank" rel="me noopener" title="Behance"><i class="fab fa-behance"></i></a>
         </div>
       </div>
 
+      <!-- Right: portrait -->
       <div class="hero-img">
-        <img src="profilepic.JPG" alt="Sreeja Profile">
+        <!-- Use your actual image names; add a WebP if you have one -->
+        <picture>
+          <source srcset="images/profile.webp" type="image/webp">
+          <img src="profilepic.JPG" alt="Sreeja Ajithkumar portrait" width="320" height="420" loading="eager">
+        </picture>
       </div>
+    </div>
+  </section>
+
+  <!-- FEATURED WORK -->
+  <section class="featured-wrap">
+    <h2>Featured Work</h2>
+    <div class="cards">
+      <!-- Card 1 -->
+      <article class="card">
+        <h3>Phishing Triage Playbook</h3>
+        <p>Python + mailbox parsing + Sigma rules to accelerate alert triage in a SOC workflow.</p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Sigma</span><span class="tag">SOC</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-outline" href="projects.html#phishing-triage">View</a>
+          <a class="btn" href="https://github.com/your-repo" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <h3>Linux Hardening Checklist</h3>
+        <p>CIS-inspired checklist with Bash scripts for auditing and remediation.</p>
+        <div class="tags">
+          <span class="tag">Linux</span><span class="tag">CIS</span><span class="tag">Bash</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-outline" href="projects.html#linux-hardening">View</a>
+          <a class="btn" href="https://github.com/your-repo" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <h3>SIEM Hunt Queries</h3>
+        <p>Detection & hunting queries for common TTPs mapped to MITRE ATT&CK.</p>
+        <div class="tags">
+          <span class="tag">SIEM</span><span class="tag">KQL/SPL</span><span class="tag">ATT&CK</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-outline" href="projects.html#siem-hunts">View</a>
+          <a class="btn" href="https://github.com/your-repo" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -286,18 +282,14 @@
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 100 },
-        "size": { "value": 2 },
-        "color": { "value": "#ffffff" },
-        "line_linked": { "enable": true, "color": "#ffffff" },
-        "move": { "speed": 1 }
+      particles: {
+        number: { value: 100 },
+        size: { value: 2 },
+        color: { value: "#ffffff" },
+        line_linked: { enable: true, color: "#ffffff" },
+        move: { speed: 1 }
       },
-      "interactivity": {
-        "events": {
-          "onhover": { "enable": true, "mode": "repulse" }
-        }
-      }
+      interactivity: { events: { onhover: { enable: true, mode: "repulse" } } }
     });
   </script>
 </body>
