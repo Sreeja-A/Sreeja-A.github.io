@@ -66,12 +66,21 @@
     }
 
     /* HERO CARD */
-    .hero-card {
-      background-color: var(--panel);
-      box-shadow: 0 0 50px var(--glow);
-      display: grid; grid-template-columns: 1.15fr .85fr; gap: 28px;
-      border-radius: 20px; padding: 40px; max-width: 1100px; width: 92%;
-      position: relative;
+  .hero-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+
+  max-width: 1000px;
+  margin: auto;
+
+  padding: 40px;
+  border-radius: 20px;
+
+  background: rgba(0, 20, 40, 0.8);
+  backdrop-filter: blur(10px);
+}
     }
     @media (max-width: 900px){ .hero-card{ grid-template-columns: 1fr; padding: 28px; } }
 
